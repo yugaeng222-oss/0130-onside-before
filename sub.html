@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="sub">
+
+ 
+         <header>
+        <h1><a href="/index.html"><img src="images/logo_white_ver.jpg" alt=""></a></h1>
+        <nav>
+            <ul class="gnb">
+                <li><a href="#"><span>ABOUT</span></a></li>
+                <li><a href="#"><span>EXPERTISE</span></a> </li>
+                <li><a href="#"><span>CASE</span></a> </li>
+                <li><a href="#"><span>NEWS</span></a></li>
+                <li><a href="#">ESG</a></li>
+            </ul>
+        </nav>
+
+        <div class="hd_btn">
+            <div class="lang">
+                KR
+            </div>
+            <div class="search">
+                <img src="images/Search_black.png" alt="">
+            </div>
+        </div>
+    </header>
+    
+   <section class="timeline-container">
+    <div class="side-nav">
+        <div class="nav-btn active">2021 - 2022</div>
+        <div class="nav-btn">2022 - 2023</div>
+        <div class="nav-btn">2023 - 2024</div>
+        <div class="nav-btn">2024 - 2025</div>
+    </div>
+
+    <div class="main-title">
+        <p class="sub">2021 - 2022</p>
+        <h1>변화의 시작</h1>
+    </div>
+
+    <div class="card-section">
+        <div class="card-stack">
+        <div class="card card1">
+            <div class="card-content">
+            <h2>2021. 10</h2>
+            <ul>
+                <li>법률사무소 KYL 개소</li>
+                <li>부동산개발 지역주택조합 분야 시작</li>
+                <li>변호사 3인 체제</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card card2">
+            <div class="card-content">
+            <h2>2022. 2</h2>
+            <ul>
+                <li>사건수행 건수 150건 이상 진행</li>
+                <li>기업투자 분야 진출</li>
+                <li>변호사 5인 체제</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card card3">
+            <div class="card-content">
+            <h2>2021. 10</h2>
+            <ul>
+                <li>3번3번3번3번</li>
+                <li>부동산개발 지역주택조합 분야 시작</li>
+                <li>변호사 3인 체제</li>
+            </ul>
+            </div>
+        </div>
+
+         <div class="card card4">
+            <div class="card-content">
+            <h2>2021. 10</h2>
+            <ul>
+                <li>4번4번4번4번</li>
+                <li>부동산개발 지역주택조합 분야 시작</li>
+                <li>변호사 3인 체제</li>
+            </ul>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 메인 타임라인 설정
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".timeline-container",
+      start: "top top",
+      end: "+=2000", // 스크롤 길이
+      pin: true,     // 화면 고정
+      scrub: 1,      // 스크롤 속도에 맞춤
+    }
+  });
+
+  // 1. 카드2가 위에서 아래로 떨어짐
+  tl.to(".card2", {
+    y: "0%", 
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  })
+  // 2. 카드2가 내려올 때 중앙 텍스트 변경 (동시 진행: "<")
+  .to(".main-title .sub", { textContent: "2022 - 2023", duration: 0.1 }, "<")
+  .to(".main-title h1", { textContent: "혁신의 등장", duration: 0.1 }, "<")
+  // 3. 카드2가 내려올 때 왼쪽 버튼 활성화 변경
+  .to(".nav-btn:nth-child(1)", { backgroundColor: "#f0f0f0", color: "#999" }, "<")
+  .to(".nav-btn:nth-child(2)", { backgroundColor: "#CE9728", color: "#fff" }, "<");
+
+  /* 카드를 더 추가하고 싶다면 아래 패턴을 반복하세요 */
+  
+  tl.to(".card3", {
+    y: "0%", 
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  })
+
+  // 2. 카드2가 내려올 때 중앙 텍스트 변경 (동시 진행: "<")
+  .to(".main-title .sub", { textContent: "2023 - 2024", duration: 0.1 }, "<")
+  .to(".main-title h1", { textContent: "실험실험실험", duration: 0.1 }, "<")
+  // 3. 카드2가 내려올 때 왼쪽 버튼 활성화 변경
+  .to(".nav-btn:nth-child(2)", { backgroundColor: "#f0f0f0", color: "#999" }, "<")
+  .to(".nav-btn:nth-child(3)", { backgroundColor: "#CE9728", color: "#fff" }, "<");
+
+  /* 카드를 더 추가하고 싶다면 아래 패턴을 반복하세요 */
+
+    tl.to(".card4", {
+    y: "0%", 
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  })
+
+  // 2. 카드2가 내려올 때 중앙 텍스트 변경 (동시 진행: "<")
+  .to(".main-title .sub", { textContent: "2024-2025", duration: 0.1 }, "<")
+  .to(".main-title h1", { textContent: "배고파배고파앙", duration: 0.1 }, "<")
+  // 3. 카드2가 내려올 때 왼쪽 버튼 활성화 변경
+  .to(".nav-btn:nth-child(3)", { backgroundColor: "#f0f0f0", color: "#999" }, "<")
+  .to(".nav-btn:nth-child(4)", { backgroundColor: "#CE9728", color: "#fff" }, "<");
+
+  /* 카드를 더 추가하고 싶다면 아래 패턴을 반복하세요 */
+  
+
+
+</script>
+</body>
+
+
+
+</html>
